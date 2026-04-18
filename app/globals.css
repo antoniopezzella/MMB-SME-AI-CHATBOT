@@ -1,0 +1,106 @@
+@import '@xyflow/react/dist/style.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --canvas-bg: #0D0D14;
+  --canvas-dot: #2A2A40;
+
+  --surface-0: #0D0D14;
+  --surface-1: #12121F;
+  --surface-2: #1A1A2E;
+  --surface-3: #22223A;
+  --surface-4: #2A2A44;
+
+  --border-subtle: #1E1E30;
+  --border-default: #2A2A44;
+  --border-strong: #3A3A55;
+
+  --text-primary: #F0F0FF;
+  --text-secondary: #9090B0;
+  --text-muted: #5A5A7A;
+
+  --node-source: #3B82F6;
+  --node-transform: #8B5CF6;
+  --node-ai: #F59E0B;
+  --node-output: #10B981;
+  --node-preview: #6B7280;
+
+  --port-string: #60A5FA;
+  --port-number: #34D399;
+  --port-boolean: #F87171;
+  --port-json: #A78BFA;
+  --port-array: #FBBF24;
+  --port-binary: #FB923C;
+  --port-any: #9CA3AF;
+
+  --status-running: #3B82F6;
+  --status-success: #10B981;
+  --status-error: #EF4444;
+
+  --minimap-bg: #12121F;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--canvas-bg);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.react-flow__background {
+  background: var(--canvas-bg) !important;
+}
+
+.react-flow__minimap {
+  background: var(--minimap-bg) !important;
+  border: 1px solid var(--border-default) !important;
+  border-radius: 8px !important;
+}
+
+.react-flow__controls {
+  background: var(--surface-2) !important;
+  border: 1px solid var(--border-default) !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+
+.react-flow__controls-button {
+  background: transparent !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+  color: var(--text-secondary) !important;
+  fill: var(--text-secondary) !important;
+}
+
+.react-flow__controls-button:hover {
+  background: var(--surface-4) !important;
+}
+
+.react-flow__handle {
+  width: 10px !important;
+  height: 10px !important;
+  border: 2px solid var(--surface-2) !important;
+  border-radius: 50% !important;
+}
+
+.react-flow__handle:hover {
+  transform: scale(1.4);
+}
+
+.react-flow__connection-line {
+  stroke: var(--border-strong);
+  stroke-width: 2;
+}
+
+@keyframes flow-dash {
+  to { stroke-dashoffset: -24; }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
